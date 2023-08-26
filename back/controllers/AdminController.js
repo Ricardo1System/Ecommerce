@@ -2,6 +2,7 @@
 
 const { Admin } = require('../models');
 const bcrypt = require('bcrypt-nodejs');
+const jwt = require('../helpers/jwt');
 
 const registro_admin = async function (req, res) {
   try {
@@ -34,6 +35,29 @@ const registro_admin = async function (req, res) {
   }
 }
 
+const login_admin = async function (req , res) {
+  var data=req.body;
+  var admins=await Admin.findAll({where:{
+    email:data.email
+  }});
+  if (admins.length==0) {
+    res.status(200).send({message:'No se encontro el correo',data:undefined});
+
+  } else {
+    let user=admins[0];
+    bcrypt.compare(data.password,user.password,async function(error,check){
+      if (check) {
+        res.status(200).send({data:user,token:jwt.createToken(user)});
+      } else {
+        res.status(200).send({message:'La contraseña no coincide',data:undefined});
+      }
+    });
+    
+    // res.status(200).send({data:user})
+  }
+};
+
 module.exports = {
-    registro_admin
+    registro_admin,
+    login_admin
 }
