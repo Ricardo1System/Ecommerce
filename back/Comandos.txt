@@ -1,0 +1,13 @@
+
+//Correr las migraciones en la BD
+npx sequelize-cli db:migrate
+
+//Inicializas los directorios necesarios para trabajar con migraciones
+npx sequelize-cli init
+
+//Se crea la tabla y sus propiedades
+npx sequelize-cli model:generate --name Cliente --attributes nombre:string,email:string >>
+
+//Tenemos que instalar las siguientes librerias
+npm install sequelize sequelize-cli
+

@@ -1,0 +1,40 @@
+
+Consultas de búsqueda:
+
+    findAll: Recuperar todos los registros de una tabla.
+    findOne: Recuperar un solo registro que cumpla con ciertas condiciones.
+    findByPk: Recuperar un registro por su clave primaria.
+    findAndCountAll: Recuperar registros y su cantidad total que cumplen con ciertas condiciones.
+    findOrCreate: Buscar un registro por ciertas condiciones o crearlo si no existe.
+
+Consultas de filtro y orden:
+
+    where: Aplicar condiciones de filtro en la búsqueda.
+    order: Ordenar los resultados según una o más columnas.
+    limit y offset: Limitar la cantidad de resultados y saltar un número de resultados.
+
+Consultas de agregación:
+
+    sum, count, min, max, avg: Realizar cálculos de agregación en una columna.
+    group: Agrupar resultados según una columna.
+
+Consultas de actualización:
+
+    update: Actualizar registros que cumplan con ciertas condiciones.
+    increment y decrement: Incrementar o decrementar valores en una columna.
+
+Consultas de eliminación:
+
+    destroy: Eliminar registros que cumplan con ciertas condiciones.
+
+Consultas con asociaciones:
+
+    include: Incluir asociaciones en la consulta para recuperar registros relacionados.
+
+Consultas de transacción:
+
+    sequelize.transaction: Realizar operaciones de base de datos como parte de una transacción.
+
+Consultas personalizadas:
+
+    sequelize.query: Ejecutar consultas SQL personalizadas.
